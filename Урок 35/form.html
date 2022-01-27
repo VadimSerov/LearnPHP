@@ -1,0 +1,24 @@
+<form action='form.php' method='post' target='_blank'>
+	<input type='text' name='name'><br>
+	<input name='age'><br>
+	<input type='password' name='pass'><br>
+	<input type='hidden' name='hid' value='test'>
+	<input type='checkbox' name='php'>PHP<br>
+	<input type='checkbox' name='java'>Java<br>
+	<input type='checkbox' name='python'>Python<br><br>
+	<input type='checkbox' name='color[]' value='red'>Red<br>
+	<input type='checkbox' name='color[]' value='green'>Green<br>
+	<input type='checkbox' name='color[]' value='blue'>Blue<br><br>
+	Сделайте выбор<br>
+	<select name='period[]' multiple >
+		<option value='1'>Месяц </option>
+		<option value='6'>Пол года </option>
+		<option value='12'>Год </option>
+		<option value='0'>Не помню </option>
+	</select><br>
+	<input type='radio' name='color' value='red'>Красный<br>
+	<input type='radio' name='color' value='green'>Зеленый<br>
+	<input type='radio' name='color' value='blue'>Синий<br>
+	<input type='radio' name='color' value='yellow'>Желтый<br>
+	<br><input type='submit' value='Отправить'>
+</form>
