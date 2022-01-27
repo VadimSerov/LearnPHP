@@ -1,0 +1,3 @@
+Привет это текстовый файл для демонстрации PHP<br>
+some peaple gets on my nervs<br>
+вот<br>
