@@ -1,32 +1,44 @@
 <?php
-// сеттеры и геттеры
+// сеттеры и геттеры методы акцессоры __set и __get
 
-class Coord{
-	private $x,$y;
-	public function __construct( $x = 0, $y ){
-		$this->x = $x ;
-		$this->y = $y ;
+class Acc {
+	private $one = [] ;
+	
+	public function __get($key){
+		if(array_key_exists($key, $this->one)){
+			return $this->one[$key] ;
+		}else{
+			return null ;
+		}	
 	}
-	public function __destruct(){
-		$this->x = 0 ;
-		$this->y = 0 ;
-		echo '<p>Объект уничтожен.</p>';
-	}
-	public function getX(){
-		return $this->x;
-	}
-	public function getY(){
-		return $this->y;
+	
+	public function __set($key,$value){
+		$this->one[$key] = $value ;
 	}
 	
 }
 
-$coord0 = new Coord(12,45);
-echo '( ' . $coord0->getX() . ', ' . $coord0->getY() . ' )'.'<br>' ;
-for($i=0;$i<15;$i++){
-	echo 'р';
+class MyGroup {
+	public $name, $age, $gender ;
+	
+	public function __construct($name, $age=18, $gender){
+		$this->name = $name ;
+		$this->age = $age ;
+		$this->gender = $gender ;		
+	}
+	public function __get($key){
+		return $this->$key ;
+	}
 }
-echo '<br>' ;
 
+$obj = new Acc() ;
+
+$obj->text = 'просто текст ' ;
+$obj->name = 'Андрей' ;
+echo $obj->text . '<br>' ;
+
+echo '<pre>' ;
+print_r($obj);
+echo '</pre>' ;
 
 ?>
