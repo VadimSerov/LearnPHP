@@ -1,6 +1,8 @@
 <?php
+//инкапсуляция
 class Person {
-	public $name ;
+//	public $name ; обычно свойства скрывают
+	private $name ;
 	public function setName($value){
 		$this->name = $value ;
 	}
