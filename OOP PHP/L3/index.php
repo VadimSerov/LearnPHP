@@ -13,7 +13,8 @@ class Person {
 }
 
 class Worker extends Person {
-	private $age ;
+	//private $age ;
+	protected $age ; //чтобы можно было наследовать это свойство
 	public function setAge($value){
 		$this->age = $value ;
 	}
@@ -23,10 +24,21 @@ class Worker extends Person {
 
 }
 
-$worker = new Worker();
+class Programmer extends Worker {
+	private $skill ;
+	public function setSkill($value){
+		$this->skill = $value ;
+	}
+	public function getSkill(){
+		return $this->skill ;
+	}	
+}
+
+$worker = new Programmer();
 $worker->setAge(22);
 $worker->setName('Костя');
+$worker->setSkill('Junior');
 
-echo $worker->getAge().' '.$worker->getName() ;
+echo $worker->getAge().' '.$worker->getName().' '.$worker->getSkill();
 
 ?>
