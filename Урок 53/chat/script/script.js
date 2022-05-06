@@ -2,7 +2,7 @@ $(document).ready(function(){
 	function message(text){
 		chat_result.innerHTML += "<div>"+text+"</div>" ;
 	}
-	var socket = new WebSocket("ws://localhost:4000/server.php");
+	var socket = new WebSocket("ws://localhost:8090/chat/server.php");
 	socket.onopen = function(){
 		message("соединение установлено");
 	}
